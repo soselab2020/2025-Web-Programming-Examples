@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        myAnimate("#box1");
+    });
+	$("#btn2").click(function(){
+        myAnimate("#box2");		
+    });	
+});
+function myAnimate(selector) {
+	$(selector).animate({top: '20px'});		
+}
+</script> 
+</head>
+<body>
+
+<button id="btn1">Start Box 1 Animation</button>
+<button id="btn2">Start Box 2 Animation</button>
+
+<p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+<div id = "box1" style="background:green;height:100px;width:100px;position:relative"></div>
+<div id = "box2" style="background:yellow;height:100px;width:100px;position:absolute"></div>
+
+</body>
+</html>

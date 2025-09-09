@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<!-- jquery-1-hide.html -->
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery-hide</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        p {
+			width: 360px;
+			height: 80px;
+			text-align: center;
+			line-height: 80px;
+			font-size: 15px;
+			color: #ffffff;
+			font-weight: bold;
+			background-color: #cecece;
+		}
+
+		div {
+			width: 360px;
+			height: 80px;
+			text-align: center;
+			line-height: 80px;
+			font-size: 15px;
+			color: #fffaf3;
+			font-weight: bold;
+			background-color: #f9c81e;
+			margin-bottom: 15px;
+		}
+	</style>
+</head>
+
+<body>
+    <input type="button" value="隱藏自己" onclick="$(this).hide()" />
+    <br />
+    <input type="button" value="隱藏段落" onclick="$('p').hide()" />
+    <br />
+    <input type="button" value="隱藏特定樣式元素" onclick="$('.test').hide() " />
+    <br />
+    <input type="button" value="隱藏特定ID之元素" onclick="$('#test').hide() " />
+    <br />
+    <hr />
+    <p>我是段落&lt;p&gt;</p>
+    <div class="test">我是套用test樣式的&lt;div&gt;</div>
+    <div id="test">我是ID叫test的&lt;div&gt;</div>
+</body>
+
+</html>

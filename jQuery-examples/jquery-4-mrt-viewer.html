@@ -1,0 +1,56 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JSON Demo: 捷運站資料列表</title>
+    <style type="text/css">
+        body {
+            font-family: Helvetica, "Microsoft YaHei", "LiHei Pro", TW-Kai;
+        }
+
+        table {
+            background-color: powderblue;
+            border-collapse: collapse;
+            border: 1px solid gray;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: white;
+        }
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    </script>
+</head>
+
+<body>
+    <table border="1">
+        <tbody id="menu"></tbody>
+    </table>
+    
+    <script type="text/javascript">
+        const jsonUrl = "https://raw.githubusercontent.com/evenchange4/mrt_opendata/master/mrt.json";
+
+        $.getJSON(jsonUrl, function (data) {
+            for (let item of data) {
+                let content =
+                    "<tr>" +
+                    "<td>" + item.id + "</td>" +
+                    "<td>" + item.name + "</td>" +
+                    "<td>" + item.number + "</td>" +
+                    "<td>" + item.address + "</td>" +
+                    "<td><a href='https://www.google.com.tw/maps/place/捷運" + item.name + "站/@" +
+                        item.latitude + "," + item.longitude + ",17z'" +
+                    "target='_blank'>GoogleMap連結</a></td>" +
+                    "</tr>";
+                $("#menu").append(content);
+            }
+        });
+    </script>
+</body>
+
+</html>
