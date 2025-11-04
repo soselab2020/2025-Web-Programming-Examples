@@ -11,7 +11,7 @@ function bubble(e) {
 
 function noBubble(e) {
    alert("This will not bubble.");
-   e.cancelBubble = true;
+   e.stopPropagation();;
 } // end function noBubble
 
 function registerEvents() {
